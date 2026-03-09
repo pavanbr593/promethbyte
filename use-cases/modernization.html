@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Modernization | PromethByte</title>
+    <meta name="description"
+        content="Transform siloed legacy data into agile, cloud-native intelligence hubs with PromethByte's end-to-end modernization framework.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1F4E78;
+            --purple: #7C3AED;
+            --pink: #EC4899;
+            --bg: #FAFAFF;
+            --dark: #0B0F1A;
+            --muted: #64748B;
+            --gradient: linear-gradient(135deg, var(--purple), var(--pink));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'DM Sans', sans-serif;
+            color: #0F172A;
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: var(--dark);
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk';
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            color: #fff;
+        }
+
+        .hero {
+            background: var(--dark);
+            color: #fff;
+            padding: 8rem 2rem 10rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -30%;
+            width: 160%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 60%, rgba(124, 58, 237, 0.2), transparent 60%),
+                radial-gradient(ellipse at 70% 40%, rgba(236, 72, 153, 0.12), transparent 55%);
+            filter: blur(80px);
+            animation: meshFloat 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes meshFloat {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            100% {
+                transform: rotate(5deg) scale(1.05);
+            }
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .lift-card {
+            background: #fff;
+            border-radius: 32px;
+            max-width: 1100px;
+            margin: -6rem auto 0;
+            padding: 4rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+            position: relative;
+            z-index: 10;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+
+        .challenge-grid h2 {
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .challenge-grid p {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .challenge-list {
+            list-style: none;
+        }
+
+        .challenge-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .challenge-list li strong {
+            color: var(--purple);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .approach {
+            padding: 6rem 2rem;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .approach-card {
+            padding: 2.5rem;
+            background: #fff;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+            transition: 0.4s;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.07);
+            border-color: rgba(124, 58, 237, 0.2);
+        }
+
+        .approach-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .approach-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .img-section {
+            padding: 0 2rem 6rem;
+        }
+
+        .img-section img {
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            max-height: 400px;
+        }
+
+        .cta-bar {
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+            border-radius: 32px;
+            margin: 0 2rem 6rem;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-bar h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-bar p {
+            opacity: 0.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: #fff;
+            padding: 0.9rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(124, 58, 237, 0.45);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .challenge-grid,
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">prometh<span>byte</span></a>
+        <a href="../index.html#capabilities" class="back">← Back to Capabilities</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>Data <em>Modernization</em></h1>
+            <p>Unlocking the full strategic value of your legacy data through engineered cloud-native environments,
+                automated ETL pipelines, and enterprise-grade data quality frameworks.</p>
+        </div>
+    </section>
+
+    <div class="lift-card">
+        <div class="challenge-grid">
+            <div>
+                <h2>The Challenge</h2>
+                <p>Most enterprises sit on decades of valuable data trapped in legacy formats, siloed databases, and
+                    brittle integrations. The cost of inaction compounds annually — in lost insights, compliance risk,
+                    and competitive disadvantage.</p>
+                <p>Our modernization framework addresses these challenges head-on, transforming your data from a
+                    liability into your most valuable strategic asset.</p>
+            </div>
+            <div>
+                <ul class="challenge-list">
+                    <li><strong>✦</strong>
+                        <div><strong>Legacy Audit & Assessment</strong> — Complete structural analysis of existing data
+                            silos, schema dependencies, and integration bottlenecks.</div>
+                    </li>
+                    <li><strong>✦</strong>
+                        <div><strong>Schema Redesign</strong> — Optimized, future-proof schemas built for cloud-native
+                            query patterns and real-time access.</div>
+                    </li>
+                    <li><strong>✦</strong>
+                        <div><strong>Protocol Bridge</strong> — Establishing secure, high-throughput data pipelines
+                            between siloed legacy assets and modern analytics hubs.</div>
+                    </li>
+                    <li><strong>✦</strong>
+                        <div><strong>Quality Frameworks</strong> — Automated data validation, anomaly detection, and
+                            governance rules embedded at the pipeline level.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="img-section container">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="Data Analytics Dashboard"
+            loading="lazy">
+    </section>
+
+    <section class="approach container">
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Our Approach</h2>
+        <p style="color: var(--muted); max-width: 600px;">A phased, low-risk methodology that delivers incremental value
+            from day one.</p>
+        <div class="approach-grid">
+            <div class="approach-card">
+                <h3>Discovery Sprint</h3>
+                <p>We embed architects within your team for a focused 2-week audit. We map data flows end-to-end,
+                    profile data quality metrics, and identify the highest-impact modernization targets.</p>
+            </div>
+            <div class="approach-card">
+                <h3>Blueprint Engineering</h3>
+                <p>Custom architecture documents, migration playbooks, and risk mitigation strategies — all reviewed and
+                    stress-tested with your engineering leadership before implementation.</p>
+            </div>
+            <div class="approach-card">
+                <h3>Iterative Delivery</h3>
+                <p>We ship in 2-week sprints with built-in rollback capabilities, automated regression testing, and
+                    stakeholder demos at every milestone. Zero surprises, maximum velocity.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-bar">
+        <h2>Ready to Modernize?</h2>
+        <p>Join global enterprises already scaling on PromethByte's modernization framework.</p>
+        <a href="../company/contact.html" class="btn">Schedule a Discovery Call</a>
+    </div>
+</body>
+
+</html>

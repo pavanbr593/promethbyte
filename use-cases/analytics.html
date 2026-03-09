@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Enablement | PromethByte</title>
+    <meta name="description"
+        content="Build the technical foundations for self-service BI, real-time decisioning, and ML-powered analytics with PromethByte.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1F4E78;
+            --purple: #7C3AED;
+            --pink: #EC4899;
+            --bg: #FAFAFF;
+            --dark: #0B0F1A;
+            --muted: #64748B;
+            --gradient: linear-gradient(135deg, var(--purple), var(--pink));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'DM Sans', sans-serif;
+            color: #0F172A;
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: var(--dark);
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk';
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            color: #fff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #312e81 100%);
+            color: #fff;
+            padding: 8rem 2rem 10rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: #c4b5fd;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: -5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .pillar {
+            background: #fff;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+            transition: 0.4s;
+        }
+
+        .pillar:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(124, 58, 237, 0.08);
+        }
+
+        .pillar-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .pillar p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .detail-section {
+            padding: 6rem 0;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .detail-grid img {
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            height: 350px;
+        }
+
+        .detail-grid h2 {
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-grid p {
+            color: var(--muted);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .cta-bar {
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+            border-radius: 32px;
+            margin: 2rem auto 6rem;
+            max-width: 1100px;
+        }
+
+        .cta-bar h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-bar p {
+            opacity: 0.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: #fff;
+            padding: 0.9rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pillars,
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">prometh<span>byte</span></a>
+        <a href="../index.html#capabilities" class="back">← Back to Capabilities</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>Analytics <em>Enablement</em></h1>
+            <p>Building a high-throughput technical foundation for self-service BI, predictive intelligence, and
+                ML-powered decision engines — ensuring every stakeholder has the insights they need, when they need
+                them.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="pillars">
+            <div class="pillar">
+                <div class="pillar-icon">📊</div>
+                <h3>Data Democratization</h3>
+                <p>Providing clean, cataloged, and governed data sets accessible to every stakeholder across the
+                    enterprise — from C-suite executives to field operators.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">🤖</div>
+                <h3>ML Pipeline Integration</h3>
+                <p>Deploying automated intelligence layers directly into your data pipelines — from feature engineering
+                    to model serving and monitoring at production scale.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">⚡</div>
+                <h3>Real-Time BI</h3>
+                <p>Sub-second latency dashboards and alerting systems tracking critical enterprise KPIs with automated
+                    anomaly detection and root cause analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-section container">
+        <div class="detail-grid">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Analytics Dashboard"
+                loading="lazy">
+            <div>
+                <h2>From Raw Data to Strategic Intelligence.</h2>
+                <p>Most organizations have more data than ever — and less clarity. Our analytics enablement framework
+                    closes that gap by building the infrastructure, governance, and tooling required for truly
+                    self-service intelligence.</p>
+                <p>We don't just deploy dashboards. We engineer the entire analytics lifecycle: from data cataloging and
+                    quality assurance to semantic layers, embedded ML models, and executive reporting — all optimized
+                    for your unique decision-making workflows.</p>
+                <p>The result: faster decisions, lower costs, and a data culture that compounds value over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-bar">
+        <h2>Power Your Decisions.</h2>
+        <p>Transform your data from overhead into your most strategic competitive advantage.</p>
+        <a href="../company/contact.html" class="btn">Request a Demo</a>
+    </div>
+</body>
+
+</html>

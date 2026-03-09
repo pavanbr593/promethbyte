@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Migration | PromethByte</title>
+    <meta name="description"
+        content="Zero-risk enterprise cloud transitions engineered for performance, security, and global scale. 256-bit encrypted pipelines with 99.8% uptime SLA.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1F4E78;
+            --purple: #7C3AED;
+            --pink: #EC4899;
+            --bg: #FAFAFF;
+            --dark: #0B0F1A;
+            --muted: #64748B;
+            --gradient: linear-gradient(135deg, var(--purple), var(--pink));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'DM Sans', sans-serif;
+            color: #0F172A;
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: var(--dark);
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk';
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            color: #fff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e1b4b 0%, #4c1d35 100%);
+            color: #fff;
+            padding: 8rem 2rem 10rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(236, 72, 153, 0.15), transparent);
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--pink);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            padding: 6rem 0;
+            align-items: center;
+        }
+
+        .split-section h2 {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .split-section p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .split-section img {
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            height: 380px;
+        }
+
+        .features-bar {
+            padding: 4rem 0;
+        }
+
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-box {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-box h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-box p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .cta-bar {
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+            border-radius: 32px;
+            margin: 4rem auto 6rem;
+            max-width: 1100px;
+        }
+
+        .cta-bar h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-bar p {
+            opacity: 0.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: #fff;
+            padding: 0.9rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .split-section,
+            .features-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">prometh<span>byte</span></a>
+        <a href="../index.html#capabilities" class="back">← Back to Capabilities</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>Cloud <em>Migration</em></h1>
+            <p>Zero-risk enterprise cloud transitions engineered for performance, security, and global scale. We move
+                your most critical workloads with 99.8% uptime guarantees and 256-bit encrypted data tunnels.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="split-section">
+            <div>
+                <h2>Seamless Transition Protocol.</h2>
+                <p>Most cloud migrations fail not because of technology, but because of planning. Our protocol starts
+                    with understanding your unique regulatory landscape, security posture, and performance targets —
+                    then engineers a phased migration path that eliminates risk while accelerating time-to-value.</p>
+                <p>We specialize in migrating high-security workloads across AWS, GCP, and Azure — including hybrid and
+                    multi-cloud configurations. Every data packet moves through 256-bit encrypted tunnels with
+                    continuous integrity verification.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+                alt="Cloud Infrastructure" loading="lazy">
+        </div>
+    </section>
+
+    <section class="features-bar container">
+        <div class="features-row">
+            <div class="feature-box">
+                <h3>99.8%</h3>
+                <p>Migration Uptime SLA<br>Zero data loss guarantee</p>
+            </div>
+            <div class="feature-box">
+                <h3>256-bit</h3>
+                <p>Encrypted Data Tunnels<br>End-to-end compliance</p>
+            </div>
+            <div class="feature-box">
+                <h3>
+                    < 4 hrs</h3>
+                        <p>Avg Cutover Window<br>Minimal business disruption</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-bar">
+        <h2>Plan Your Migration.</h2>
+        <p>Get a complimentary infrastructure assessment from our cloud architects.</p>
+        <a href="../company/contact.html" class="btn">Request Migration Audit</a>
+    </div>
+</body>
+
+</html>

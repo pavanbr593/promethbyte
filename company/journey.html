@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey | PromethByte</title>
+    <meta name="description"
+        content="From Bengaluru to global impact — the story of PromethByte's mission to operationalize enterprise data transformation.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1F4E78;
+            --purple: #7C3AED;
+            --pink: #EC4899;
+            --bg: #FAFAFF;
+            --dark: #0B0F1A;
+            --muted: #64748B;
+            --gradient: linear-gradient(135deg, var(--purple), var(--pink));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'DM Sans', sans-serif;
+            color: #0F172A;
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: var(--dark);
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk';
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .back:hover {
+            color: #fff;
+        }
+
+        .page-hero {
+            padding: 6rem 2rem 4rem;
+        }
+
+        .page-hero h1 {
+            font-size: 4rem;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            color: var(--muted);
+            max-width: 700px;
+        }
+
+        .hero-img {
+            margin: 0 auto 4rem;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero-img img {
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            max-height: 360px;
+        }
+
+        .timeline {
+            padding: 0 0 6rem;
+        }
+
+        .tl-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: 60px;
+            top: 0;
+            bottom: -2rem;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(124, 58, 237, 0.3), rgba(236, 72, 153, 0.3));
+        }
+
+        .tl-year {
+            font-family: 'Space Grotesk';
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--purple);
+            background: var(--bg);
+            padding-top: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tl-content {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid #f1f5f9;
+            transition: 0.3s;
+        }
+
+        .tl-content:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .tl-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tl-content p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .team-section {
+            padding: 4rem 0 6rem;
+        }
+
+        .team-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-section>p {
+            color: var(--muted);
+            margin-bottom: 3rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .team-grid img {
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            height: 260px;
+        }
+
+        .cta-bar {
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 32px;
+            margin: 0 auto 6rem;
+            max-width: 900px;
+        }
+
+        .cta-bar h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-bar p {
+            opacity: 0.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: #fff;
+            padding: 0.9rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tl-item {
+                grid-template-columns: 1fr;
+            }
+
+            .tl-item::before {
+                display: none;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">prometh<span>byte</span></a>
+        <a href="../index.html" class="back">← Back to Home</a>
+    </header>
+
+    <section class="page-hero container">
+        <h1>Our Journey.</h1>
+        <p>From a Bengaluru garage to powering enterprise transformations across four continents — this is the story of
+            how PromethByte came to operationalize data intelligence.</p>
+    </section>
+
+    <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80" alt="PromethByte Team"
+            loading="lazy">
+    </div>
+
+    <section class="timeline container">
+        <div class="tl-item">
+            <div class="tl-year">2023</div>
+            <div class="tl-content">
+                <h3>The Genesis</h3>
+                <p>Founded in Bengaluru by a team of ex-enterprise architects who saw a critical gap: organizations had
+                    access to more data than ever, but lacked the transformation engineering required to turn it into
+                    intelligence. PromethByte was born to close that gap — not with tools, but with methodology.</p>
+            </div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-year">2024</div>
+            <div class="tl-content">
+                <h3>Scaling to Enterprise</h3>
+                <p>Launched our proprietary Transformation Suite — a battle-tested framework for phased legacy-to-cloud
+                    migrations with zero-downtime guarantees. Onboarded our first Fortune 500 client and expanded to 60+
+                    engineers across three delivery centers. Achieved SOC 2 Type II compliance and AWS Advanced Partner
+                    status.</p>
+            </div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-year">2025</div>
+            <div class="tl-content">
+                <h3>The Intelligence Era</h3>
+                <p>Integrated agentic AI and RAG pipeline capabilities into our transformation framework. Launched
+                    dedicated verticals for Financial Services, Healthcare, and SaaS. Crossed the 150-client milestone
+                    and expanded to serve enterprises across North America, Europe, and Southeast Asia. 4.2 petabytes
+                    processed daily.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section container">
+        <h2>The People Behind the Platform.</h2>
+        <p>A 120+ person team of architects, engineers, and data scientists united by a single mission: making data
+            transformation accessible, repeatable, and impactful.</p>
+        <div class="team-grid">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                alt="Team Sprint Planning" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+                alt="Engineering Whiteboard Session" loading="lazy">
+        </div>
+    </section>
+
+    <div class="cta-bar">
+        <h2>Join the Transformation.</h2>
+        <p>Partner with the team that operationalizes data intelligence.</p>
+        <a href="contact.html" class="btn">Contact Our Team</a>
+    </div>
+</body>
+
+</html>
